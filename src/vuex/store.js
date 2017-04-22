@@ -14,7 +14,10 @@ function getGIFs(query) {
     .then(res => res.json())
 };
 
-const state = {};
+const state = {
+  keyword: '',
+  gifs: [],
+};
 const actions = {
   [CHANGE_KEYWORD]({
     commit
@@ -30,7 +33,11 @@ const actions = {
     })
   }
 };
-const getters = {};
+
+const getters = {
+  gifs: state => state.gifs
+};
+
 const mutations = {
   [CHANGE_KEYWORD](state, keyword) {
     state.keyword = keyword;
